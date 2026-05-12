@@ -5,7 +5,6 @@ terraform.tfvars
 *.tfvars.json
 *.log
 crash.log
-terraform.lock.hcl
 .terraform/
 
 #.terraform/ - its pointing to folder name
