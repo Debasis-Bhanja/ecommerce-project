@@ -4,3 +4,10 @@
 
 # gitignore file will have the filename like *.tfstate (state file) *.tfvars (variables and its values) - that we want to ignore
 # while we add or commit. because if they are not ignored its values will be shown while deploying (terraform apply)
+
+
+# at first all the .tf files were locally, but then when i was using app.terrform to migrate the code it was asking for directory
+# to start with. so i moved all my .tf files to terraform folder.
+# mk dir terraform --> mv *.tf terraform/
+# NOTE --- .terraform is different from terraform folder. .tf gets created when we are using terraform plan, commit and statefile
+# are hosted in that.
