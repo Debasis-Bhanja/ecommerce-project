@@ -1,0 +1,13 @@
+.terraform*
+*.tfstate
+*.tfstate
+terraform.tfvars
+*.tfvars.json
+*.log
+crash.log
+terraform.lock.hcl
+.terraform/
+
+#.terraform/ - its pointing to folder name
+# here we have provided all the file names or only its extension with wild card to ignore which is it will not show its values
+# when we do terraform apply.
