@@ -5,7 +5,7 @@ terraform {
   # it will not create bucket, we need to create it using aws cli, manually or other cicd.
   # lock file will also be created (use_lockfile). this is used to avoid deadlock. 
   # so at a time only one user will be able to deploy the changes and once deployed it will unlock the file.
-   /*backend "s3" {
+  /*backend "s3" {
     bucket = "ecommerce-terraform-statefile-sbx"
     key    = "sbx/terraform.tfstate"
     region = "ap-south-1"
