@@ -5,13 +5,26 @@ terraform {
   # it will not create bucket, we need to create it using aws cli, manually or other cicd.
   # lock file will also be created (use_lockfile). this is used to avoid deadlock. 
   # so at a time only one user will be able to deploy the changes and once deployed it will unlock the file.
-  backend "s3" {
+   /*backend "s3" {
     bucket = "ecommerce-terraform-statefile-sbx"
     key    = "sbx/terraform.tfstate"
     region = "ap-south-1"
     encrypt = true
     use_lockfile = true
-  }
+  }*/
+
+  # load the terraform state file to terraform cloud. so we can have two state files one for infra which is on terraform cloud
+  # and another one for aws code, which we can store in s3.
+  # code to store the terraform state file on terraform cloud
+
+    backend "remote" {
+      organization = "deba-PersonalProjects"
+
+      workspaces {
+        name = "ecommerce-project-sbx"
+      }
+    }
+
   # terraform provider converts the terraform into the aws (or other cloud) readable format
   # provider calls the aws sevice api to deploy the changes. required_provider has its own version
   # and below is the format for the same.
