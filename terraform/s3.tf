@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "ecomm_commons" {
   tags = merge (
     local.s3_tags,
     {
-    Name        = "ecommerce-commons-bkt-${var.environment}" 
+    Name = "ecommerce-commons-bkt-${var.environment}" 
     }
   )
 }
